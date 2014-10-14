@@ -66,14 +66,14 @@ color: black;
 }
 
 
-#about_us {
+.about_us {
   text-align: center;
   background-color: white;
 }
 
 
 
-#terms {
+.terms {
   text-align: left;
   background-color: white;
 }
@@ -125,8 +125,9 @@ color: black;
 }
 */
 
-
-
+/*
+<%= link_to "gCamp", root_path, id: "gCamp" %>
+*/
 
 /*
 h2 {
