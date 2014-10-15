@@ -58,16 +58,13 @@
                 </ul>
                  </div>
                 </div>
-
-
-
-</div>
-
-
-
+                  </div>
+                    </div>
 
 <% @quotes.each do |quote| %>
-  <p><%= quote %></p>
+ <p><%= quote.text %></p>
+ <p><%= quote.author %></p>
+ <hr>
 <% end %>
 
 <!--
@@ -78,5 +75,4 @@
       <% end %>
     </p>
 -->
-
-</div><!-- /container -->
+<!-- /container -->
