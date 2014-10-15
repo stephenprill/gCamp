@@ -1,5 +1,5 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="content">
+
   <div class="container">
 <div class="jumbotron">
     <h1>gCamp</h1>
@@ -56,20 +56,27 @@
                   <li>Comment on tasks and documents</li>
                   <li>Get e-mail notifications</li>
                 </ul>
-              </div>
+                 </div>
                 </div>
-                  </div>
+
 
 
 </div>
 
-<p>
+
+
+
+<% @quotes.each do |quote| %>
+  <p><%= quote %></p>
+<% end %>
+
+<!--
+    <p>
       <% quotes = ['“Failure is not an option to me.” - Arnold Schwarzenegger', '“Your time is limited, so don’t waste it living someone else’s life.” - Steve Jobs', '“Better Ingredients, Better Pizza” - Papa John'] %>
       <% quotes.each do |quote| %>
       <%= quote =%><br><br>
       <% end %>
-  </p>
-
-
+    </p>
+-->
 
 </div><!-- /container -->

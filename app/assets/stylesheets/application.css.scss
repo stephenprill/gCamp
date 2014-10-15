@@ -58,7 +58,7 @@ a:active {
   }
 
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
-color: black;
+  color: black;
 }
 
 .panel-body {
@@ -112,6 +112,10 @@ color: black;
 
 .panel-heading {
   background-color: #99CCFF;
+}
+
+.authors {
+  font-color: gray;
 }
 
 /*
