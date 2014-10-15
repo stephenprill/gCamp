@@ -1,0 +1,15 @@
+  <div class="container">
+    <div class="faq">
+
+  <h1 class="freqheader">FAQ</h1>
+
+  <br><br>
+
+  <% @questions.each do |question| %>
+  <p class="freqquestion"><%= question.question %></p>
+  <p class="freqanswer"><%= question.answer %></p>
+  <hr>
+  <% end %>
+
+  </div>
+    </div>

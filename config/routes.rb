@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "pages#index"
   get 'about' => 'pages#about_us', as: :about_us
   get 'terms' => 'pages#terms', as: :terms
+  get 'faq' => 'pages#faq', as: :faq
 
   end
 

@@ -10,6 +10,9 @@ body {
   padding-top: 65px;
   }
 
+.wrapper {
+  background-color: white;
+}
 
 
 h1 {
@@ -77,6 +80,32 @@ a:active {
   text-align: left;
   background-color: white;
 }
+
+.faq {
+  text-align: left;
+}
+
+.freqheader {
+  text-align: center;
+}
+
+.freqquestion {
+  font-weight: bold;
+}
+
+.freqanswer {
+  font-style: italic;
+}
+
+.quotetext {
+  font-weight: bold;
+}
+
+.quoteanswer {
+  font-weight: italic;
+  font-color: gray;
+}
+
 
 /*
 .panel-heading {
