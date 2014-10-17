@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about_us', as: :about_us
   get 'terms' => 'pages#terms', as: :terms
   get 'faq' => 'pages#faq', as: :faq
-  get 'tasks' => 'pages#tasks', as: :tasks
 
   end
 
