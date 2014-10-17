@@ -106,18 +106,6 @@ a:active {
   font-color: gray;
 }
 
-
-/*
-.panel-heading {
-  background-color: blue;
-}
-
-/*
-.footer-header {
-  border-top: 2px solid gray;
-}
-*/
-
 .content {
   width:auto;
   height: auto;
@@ -213,6 +201,16 @@ img {
 
   }
 
+  /*
+  .panel-heading {
+    background-color: blue;
+  }
+
+  /*
+  .footer-header {
+    border-top: 2px solid gray;
+  }
+
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -226,4 +224,4 @@ img {
  *
  *= require_tree .
  *= require_self
- */
+*/
