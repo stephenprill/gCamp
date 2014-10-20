@@ -21,15 +21,15 @@ class PagesController < ApplicationController
 
 	  question1 = Question.new
 	  question1.question = "How do you do this?"
-	  question1.answer = "Follow the firections."
+	  question1.answer = "Follow the directions."
 
 	  question2 = Question.new
 	  question2.question = "Does this work?"
 	  question2.answer = "As of now, I think it does."
 
 	  question3 = Question.new
-	  question3.question = "Is gCamp down with G-Unit?"
-	  question3.answer = "Im not sure."
+	  question3.question = "What is a question?"
+	  question3.answer = "A sentence worded or expressed so as to elicit information."
 
     @questions = [question1, question2, question3]
 
