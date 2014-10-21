@@ -18,8 +18,8 @@ body {
 h1 {
   color: black;
   font-size: 55px;
-  margin-top: 10px;
-  bottom-padding: 10px;
+  /*margin-top: 10px;*/
+  /*bottom-padding: 10px;*/
 }
 
 
@@ -73,8 +73,6 @@ a:active {
   text-align: center;
   background-color: white;
 }
-
-
 
 .terms {
   text-align: left;
@@ -133,6 +131,19 @@ a:active {
 
 .authors {
   font-color: gray;
+}
+
+.col-md-4_taskbtn {
+  float: right !important;
+
+  }
+
+  .pull-right {
+  float: right !important;
+}
+
+.taskbtn_pull-right {
+  float: right !important;
 }
 
 /*

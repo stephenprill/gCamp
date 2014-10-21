@@ -1,8 +1,18 @@
-<div class="container">
-<h1>Editing task</h1>
 
+<div class="container">
+<h1>Edit Task</h1>
+
+<div class="row">
 <%= render 'form' %>
+
+<!--
+<div class="checkbox">
+<%= check_box_tag(:tasks) %>
+<%= label_tag(:tasks, "Complete") %>
+</div> -->
 
 <%= link_to 'Show', @task %> |
 <%= link_to 'Back', tasks_path %>
+
+</div>
 </div>
