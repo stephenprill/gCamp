@@ -5,6 +5,13 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
+
+    if params[:sort_by] == "all"
+      @tasks = Task.all
+    elsif params[:sort_by] == "complete"
+      @tasks = Task.order(:complete)
+
+    end
   end
 
   # GET /tasks/1
@@ -65,6 +72,7 @@ class TasksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_task
       @task = Task.find(params[:id])
+      @task_new = false
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
