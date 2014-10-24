@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
     <%= stylesheet_link_tag 'application' %>
     <%= csrf_meta_tags %>
     <%= javascript_include_tag 'application' %>
 
-
-    <title>A Web Page</title>
+    <title>gCamp</title>
   </head>
 
   <body>
@@ -28,8 +26,6 @@
 
           <%= link_to "gCamp", root_path, class: "navbar-brand" %>
           <!-- <a class="navbar-brand" href="#">gCamp</a> -->
-
-
         </div>
         <div class="navbar-collapse collapse">
 
@@ -45,8 +41,37 @@
       <%= link_to "Terms | ", terms_path %>
       <%= link_to "FAQ | ", faq_path %>
       <%= link_to "Tasks", tasks_path %>
+    </footer>
+
+    <footer>
+      <div>
+       <div class="col-md-2">
+	<%= link_to “about”, about_path %> | <%= link_to “terms”, terms_path %>
+       </div>
+
+      <div class=“col-md-2 col-md-offset-8”>
+      <%= link_to "http://www.linkedin.com" do %>
+        <%= image_tag("linked_in.png", width: "20em") %>
+      <% end %> |
+
+      <%= link_to "http://www.github.com" do %>
+        <%= image_tag(“github.png”, width: "20em") %>
+      <% end %> |
+
+      <%= link_to "http://www.twitter.com" do %>
+        <%= image_tag(“twitter.png”, width: "20em") %>
+      <% end %> |
+
+      <%= link_to "http://www.linkedin.com" do %>
+        <%= image_tag(“gschool.png", width: "20em") %>
+      <% end %> |
+
+   </div>
+     </div>
 
     </footer>
+
+
     </div>
   </body>
 </html>

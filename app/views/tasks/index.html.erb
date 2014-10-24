@@ -27,7 +27,7 @@
         <td><%= task.complete %></td>
 
         <td width="30px">
-          <%= link_to 'Show', class: 'btn btn-success pull-right' %>
+          <%= link_to 'Show', task_path(task), class: 'btn btn-success pull-right' %>
         </td>
 
         <td width="30px">
@@ -37,9 +37,8 @@
         <td width="30px">
           <%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger pull-right' %>
         </td>
-
-
       </tr>
+
     <% end %>
     </tbody>
   </table>
