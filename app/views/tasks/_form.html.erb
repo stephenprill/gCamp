@@ -17,10 +17,11 @@
     <%= f.text_field :description %>
   </div>
 
+  <% if @edit_page %>
+    <%= f.label :complete %>
+    <%= f.check_box :complete %>
+  <% end %>
 
-  
-  <%= f.label :complete %>
-  <%= f.check_box :complete %>
   <div class="actions">
     <%= f.submit %>
   </div>
