@@ -6,10 +6,10 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
 
-    if params[:sort_by] == "all"
+    if params[:type] == "all"
       @tasks = Task.all
-    elsif params[:sort_by] == "complete"
-      @tasks = Task.order(:complete)
+    elsif params[:type] == "incomplete"
+      @tasks = Task.where(:false)
 
     end
   end
@@ -80,6 +80,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:description, :complete)
+      params.require(:task).permit(:description, :due_date, :complete)
     end
 end

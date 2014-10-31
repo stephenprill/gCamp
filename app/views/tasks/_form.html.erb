@@ -17,13 +17,18 @@
     <%= f.text_field :description %>
   </div>
 
+  <div class="form_group">
+    <%= f.label :due_date %>
+    <%= f.date_field :due_date %>
+  </div>
+
   <% if @edit_page %>
     <%= f.label :complete %>
     <%= f.check_box :complete %>
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: '' %>
   </div>
 </div>
 <% end %>
