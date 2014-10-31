@@ -9,7 +9,7 @@ class TasksController < ApplicationController
     if params[:type] == "all"
       @tasks = Task.all
     elsif params[:type] == "incomplete"
-      @tasks = Task.where(:false)
+      @tasks = Task.where(complete:false)
 
     end
   end
