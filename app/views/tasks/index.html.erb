@@ -1,21 +1,32 @@
-<!-- <html [class:”form-horizontal”}> -->
+
+
 <div class="container">
-<div class = "page-header">
-<div class="pull-right">
-    <%= link_to_if params[:type] != "all", "All", tasks_path(type: "all") %> |
-    <%= link_to_if params[:type] == "all", "Incomplete", tasks_path(type: "incomplete") %>
-    <%= link_to 'Create Task', new_task_path, class: 'btn btn-info pull-right' %>
-  </div>
+<table class="row">
+<tr>
+  <td>
     <h1>Tasks</h1>
+
+
+      <%= link_to_if params[:type] != "all", "All", tasks_path(type: "all") %> |
+      <%= link_to_if params[:type] == "all", "Incomplete", tasks_path(type: "incomplete") %>
+      <%= link_to 'Create Task', new_task_path, class: 'btn btn-info pull-right' %>
+
+
+  </td>
+</tr>
   </div>
+</div>
 
 
+
+
+<div class="container">
   <table class="table">
     <thead>
       <tr>
         <th>Description</th>
         <th>Complete</th>
-        <th>Due Date</th>
+        <th>Due</th>
         <th colspan="3">
         </th>
       </tr>
@@ -46,3 +57,57 @@
     </tbody>
   </table>
  </div>
+
+
+ <!-- <html [class:”form-horizontal”}>
+ <div class="pull-right">
+     </div>
+     <div class="pull-left">
+ </div>
+ <div class="pull-right">
+   </div>
+
+ <div class="container">
+       <div class = "page-header">
+
+                       <div class="wrapper clearfix">
+
+ <div class="col-md-8">
+          <h1>Tasks</h1>
+ </div>
+
+
+
+
+ <div class="col-md-4">
+   <div class="pull-right">
+       <%= link_to_if params[:type] != "all", "All", tasks_path(type: "all") %> |
+       <%= link_to_if params[:type] == "all", "Incomplete", tasks_path(type: "incomplete") %>
+
+
+
+       <%= link_to 'Create Task', new_task_path, class: 'btn btn-info pull-right' %>
+   </div>
+ </div>
+
+
+
+                       </div>
+
+       </div>
+
+ </div>
+
+____
+
+
+  <div class="col-md-1.pull-right">
+                <div class="pull-right">
+    <div class="col-md-1.pull-right">
+              <div class="pull-right">
+    </div>
+            </div>
+  </div>
+            </div>
+
+     -->

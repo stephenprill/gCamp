@@ -12,23 +12,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
+    <form class="form-horizontal" role="form">
+      <div class="form-group">
 
-  <div class="form_group">
-    <%= f.label :due_date %>
-    <%= f.date_field :due_date %>
-  </div>
 
-  <% if @edit_page %>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+
+    <div class="form_group">
+      <%= f.label :due_date %>
+      <%= f.date_field :due_date %>
+    </div>
+
+    <% if @edit_page %>
     <%= f.label :complete %>
     <%= f.check_box :complete %>
-  <% end %>
+    <% end %>
 
-  <div class="actions">
-    <%= f.submit class: '' %>
-  </div>
+    <div class="actions">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
+
 </div>
 <% end %>
+</form>
+</div>
