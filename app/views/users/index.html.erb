@@ -1,18 +1,22 @@
+
+
 <div class = "container">
   <div class = "page-header">
     <h1>Users</h1>
-    <div class = "pull-right">
-    <%= link_to "Create User", new_user_path, :class => "btn btn-primary"%>
-    </div>
+      <div class = "pull-right">
+        <%= link_to "Create User", new_user_path, :class => "btn btn-primary"%>
+      </div>
     <table>
       <thead>
-      <tr>
-        <th>Name</th>
-        <th>E-mail</th>
-      </tr>
+        <tr>
+          <th>Name</th>
+          <th>E-mail</th>
+        </tr>
       </thead>
-      <tbody>
 
+    
+
+      <tbody>
         <% @users.each do |user| %>
         <tr>
           <td><%= user.first_name %></td>
