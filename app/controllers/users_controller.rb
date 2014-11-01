@@ -9,10 +9,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    users_param = params.require(:user).permit(:name, :email)
+    users_param = params.require(:user).permit(:first_name, :last_name, :email)
     @user = User.new(users_param)
-    @user.save
+    if @user.save
+      flash[:success] = "user was successfully created"
     redirect_to users_path
+  end
   end
 
   def edit
@@ -20,10 +22,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    users_param = params.require(:user).permit(:name, :email)
+    users_param = params.require(:user).permit(:first_name, :last_name, :email)
     @user = User.find(params[:id])
-    @user.update(users_param)
+    if @user.update(users_param)
+    flash[:success] = "user was successfully updated"
     redirect_to users_path
+  end
   end
 
   def destroy
