@@ -1,9 +1,12 @@
 <div class = "container">
+  <div class = "page-header">
+    <h1>Create Project</h1>
+  </div>
 
 
   <%= form_for (@projects) do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name %> <br><br>
 
   <%= f.submit 'Create Project', class: 'btn btn-primary' %>
 
