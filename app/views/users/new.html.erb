@@ -1,5 +1,5 @@
 
-
+<div class = "container">
 <%= form_for @user do |f| %>
 
 <div>
@@ -7,7 +7,7 @@
   <%= f.text_field :first_name %>
 </div>
 
-<div> 
+<div>
   <%= f.label :last_name %>
   <%= f.text_field :last_name %>
 </div>
@@ -19,6 +19,7 @@
   <%= f.text_field :email %>
 </div>
 
-<%= f.submit "Create User" %>
+<%= f.submit "Create User", class: "btn btn-primary" %>
 
 <% end %>
+</div>

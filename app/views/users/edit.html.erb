@@ -1,5 +1,5 @@
 
-
+<div class = "container">
 <%= form_for @user do |f| %>
 
 <div>
@@ -17,8 +17,10 @@
   <%= f.text_field :email %>
 </div>
 
-<%= f.submit "Edit User" %>
+<%= f.submit "Update User", :class => "btn btn-primary" %>
 
 <% end %>
 
-<%= link_to "Delete", user_path(@user), method: :delete %>
+<%= link_to "Delete User", user_path(@user), method: :delete, class: 'btn btn-danger' %>
+
+</div>
