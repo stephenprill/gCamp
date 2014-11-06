@@ -13,9 +13,11 @@ class UsersController < ApplicationController
     @user = User.new(users_param)
     if @user.save
       flash[:success] = "User was successfully created"
-    redirect_to users_path
-  end
-  end
+      redirect_to users_path
+    else
+      render :new
+    end
+    end
 
   def edit
     @user = User.find(params[:id])
@@ -29,6 +31,9 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
   end
+
+
+
 
   def show
     @user = User.find(params[:id])

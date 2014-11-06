@@ -2,8 +2,7 @@
   <div class = "well col-md-4 col-md-offset-4">
 
     <h2>Sign In</h2>
-
-
+    
   <%= form_tag signin_path do |f| %>
     <p>
       <% if @sign_in_error %>
@@ -24,7 +23,7 @@
 <div>
     <%= label_tag :password %>
   <div class = "form-group">
-    <%= password_field_tag :password %>
+    <%= password_field_tag :password, nil, class: "form-control" %>
   </div>
   </div>
 
