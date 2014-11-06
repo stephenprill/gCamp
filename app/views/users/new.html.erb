@@ -1,8 +1,6 @@
+<div = "container">
 
-<div class = "container">
-  <form class="form-horizontal" role="form">
-
-  <h3>New User</h3><br>
+  <h3>New User</h3>
   <%= form_for @user do |f| %>
 
     <div class = "form-group">
@@ -43,13 +41,11 @@
   </div>
 
 
-<div class = "form-group">
+  <div class = "actions">
   <div class = "col-sm-offset-3 col-sm-9">
-  <%= f.submit "Create User", class: "btn btn-primary" %>
-</div>
-</div>
+  <%= f.submit "Create User", class: 'btn btn-primary' %>
+  </div>
+  </div>
 
   <% end %>
-</form>
-
 </div>

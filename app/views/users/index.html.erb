@@ -21,8 +21,8 @@
       <tbody>
         <% @users.each do |user| %>
         <tr>
-          <td class="col-md-2"><%= user.first_name %><%= user.last_name %></td>
-          <td width="col-md-2"><%= user.email %></td>
+          <td class="col-md-2"><%= link_to user.full_name, user %></td>
+          <td width="col-md-2"><%= mail_to user.email %></td>
           <div class ="col-md-3">
             <div class = "pull-right">
           <td width="30px"><%= link_to "Edit", edit_user_path(user) %></td>

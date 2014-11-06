@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-  feature "Signup" do
+  feature "Authentication" do
     scenario 'User signsup' do
     visit root_path
     click_on "Sign Up"
@@ -15,10 +15,19 @@ require 'rails_helper'
     visit root_path
     expect(page).to have_content("Jameson Jones")
 
-  end
+    click_on "Sign Out"
+    visit root_path
+    click_on "Sign In"
+    fill_in "Email", with: "jameson@mail.com"
+    fill_in "Password", with: "pass"
 
+    click_on "Sign in"
+    visit root_path
+    expect(page).to have_content("Jameson Jones")
 
+    click_on "Sign Out"
+    visit root_path
+    expect(page).to have_no_content("Jameson Jones")
 
-
-
+end
 end

@@ -26,7 +26,7 @@
         <div class = "navbar-brand pull-right">
 
           <% if current_user %>
-          <font color="white"><%= current_user.first_name %>  <%= current_user.last_name %></font>
+          <font color="white"><%= current_user.full_name %> </font>
           <%= link_to "Sign Out", signout_path, style: 'color:#FFFFFF;' %>
           <% else %>
           <%= link_to "Sign Up", signup_path, style: 'color:#FFFFFF;'  %>
