@@ -17,22 +17,21 @@
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <%= link_to "gCamp", root_path, class: "navbar-brand" %>
+        <div class="navbar-brand">
+          <%= link_to "gCamp", root_path %>
           <!-- <a class="navbar-brand" href="#">gCamp</a> -->
         </div>
 
 
-
-        <div class = "pull-right">
+        <div class = "navbar-brand pull-right">
 
           <% if current_user %>
-          <%= current_user.email %>
-          <%= link_to "Sign Out", signout_path %>
+          <font color="white"><%= current_user.first_name %>  <%= current_user.last_name %></font>
+          <%= link_to "Sign Out", signout_path, style: 'color:#FFFFFF;' %>
           <% else %>
-          <%= link_to "Sign Up", signup_path %>
+          <%= link_to "Sign Up", signup_path, style: 'color:#FFFFFF;'  %>
             |
-          <%= link_to "Sign In", signin_path %>
+          <%= link_to "Sign In", signin_path, style: 'color:#FFFFFF;'  %>
 
           <% end %>
         </div>

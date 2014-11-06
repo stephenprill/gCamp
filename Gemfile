@@ -1,10 +1,17 @@
 source 'https://rubygems.org'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem "capybara"
+  gem 'launchy'
+  end
+
 gem "pg"
 
 group :production do
   gem "rails_12factor"
-end
+  end
+
 
 gem 'bootstrap-sass', '~> 3.2.0'
 

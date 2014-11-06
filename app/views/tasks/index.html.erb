@@ -4,10 +4,10 @@
     <div class="pull-right">
       <%= link_to_if params[:type] != "all", "All", tasks_path(type: "all") %> |
       <%= link_to_if params[:type] == "all", "Incomplete", tasks_path(type: "incomplete") %>
-      <%= link_to 'Create Task', new_task_path, class: 'btn btn-info pull-right' %>
+      <%= link_to 'Create Task', new_task_path, class: 'btn btn-info' %>
     </div>
 
-    <h1>Tasks</h1>
+    <h3>Tasks</h3>
 </div>
 
 
