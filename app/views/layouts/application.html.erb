@@ -22,7 +22,6 @@
           <!-- <a class="navbar-brand" href="#">gCamp</a> -->
         </div>
 
-
         <div class = "navbar-brand pull-right">
 
           <% if current_user %>
@@ -38,18 +37,18 @@
       </div>
     </div>
 
-<div class = "container">
+    <div class = "container">
       <% if flash[:success] %>
     <div class="alert alert-success" role="alert">
       <%= flash[:success] %>
       <% end %>
-    </div>
+      </div>
 </div>
 
-<%= notice %>
+    <%= notice %>
 
     <%= yield %>
-      <hr>
+
     <footer class="container">
 
         <%= link_to "About", about_us_path %> |
