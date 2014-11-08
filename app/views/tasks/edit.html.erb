@@ -1,13 +1,17 @@
 
-<div class="container">
-<h3>Edit Task</h3>
+  <div class="container">
+
+    <h3>Edit Task</h3>
 
 
-<div class="row">
-<%= render 'form' %>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+  <div class="row">
+    <%= render 'form' %>
 
-</div>
+  <div class="col-sm-offset-2 col-sm-10">
+    <%= link_to 'Show', @task %> |
+    <%= link_to 'Back', tasks_path %>
+  </div>
+  </div>
+
 </div>

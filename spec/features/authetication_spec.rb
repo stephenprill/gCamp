@@ -2,10 +2,10 @@ require 'rails_helper'
 
 
   feature "Authentication" do
-    scenario 'User signsup' do
+    scenario 'User signs_up' do
     visit root_path
     click_on "Sign Up"
-    fill_in "First name", with: "Jameson"
+    fill_in("First name", {with: "Jameson"})
     fill_in "Last name", with: "Jones"
     fill_in "Email", with: "jameson@mail.com"
     fill_in "Password", with: "pass"

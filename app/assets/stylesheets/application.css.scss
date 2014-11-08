@@ -109,6 +109,17 @@ h1 {
   font-color: gray;
 }
 
+#task_complete {
+  position: relative;
+  margin-left: 0;
+  display: inline-block;
+}
+
+.checkbox label {
+  padding: 0;
+}
+
+
 /*
 
 .
