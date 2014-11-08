@@ -18,19 +18,20 @@
         <%= f.text_field :description, class: 'form-control' %>
       </div>
     </div>
-    <div class="form-group">
-      <%= f.label :due_date, class: 'col-sm-2 control-label' %>
-      <div class="col-sm-4">
-        <%= f.date_field :due_date, class: 'form-control' %>
-      </div>
+
+  <div class="form-group">
+    <%= f.label :due_date, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.date_field :due_date, class: 'form-control', span: 'glyphicon glyphicon-calendar'  %>
     </div>
+  </div>
 
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <div class="checkbox">
           <% if @edit_page %>
-            <%= f.label :complete %>
             <%= f.check_box :complete, class: 'checkbox' %>
+            <%= f.label :complete %>
           <% end %>
         </div>
       </div>
