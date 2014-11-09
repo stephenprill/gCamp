@@ -1,24 +1,38 @@
-<div class="container">
 
-<h3><%= @user.full_name %></h3>
 
-<div class="pull-right">
-<td><%= link_to "Edit", edit_user_path, :class => "btn btn-info btn" %>
-</div>
+<div class = "container">
+    <div class = "page-header">
+      <%= link_to "Edit", edit_user_path, :class => "btn btn-info btn pull-right" %>
+        <h3><%= @user.full_name %></h3>
 
-<p>
- <strong>First name:</strong>
- <%= @user.first_name %>
-</p>
+    </div>
 
-<p>
- <strong>Last name:</strong>
- <%= @user.last_name %>
-</p>
 
-<p>
- <strong>Email:</strong>
- <%= mail_to @user.email %>
-</p>
+
+
+    <dl class="dl-horizontal">
+      <dt>
+
+        <strong>First name:</strong>
+        <%= @user.first_name %>
+
+      </dt>
+
+      <dt>
+
+        <strong>Last name:</strong>
+        <%= @user.last_name %>
+
+      </dt>
+
+      <dt>
+
+        <strong>Email:</strong>
+        <%= mail_to @user.email %>
+
+      </dt>
+
+    </dl>
+
 
 </div>
