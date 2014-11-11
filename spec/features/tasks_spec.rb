@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
   feature "Tasks" do
 
     scenario 'User creates task' do
