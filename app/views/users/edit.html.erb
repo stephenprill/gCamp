@@ -6,8 +6,6 @@
 
 <%= form_for(@user, :html => { class: 'form-horizontal'}) do |f| %>
 
-
-
 <div class="form-group">
   <%= f.label :first_name, class: 'col-sm-2 control-label'  %>
   <div class="col-sm-4">
@@ -42,7 +40,7 @@
     <div class="well col-sm-offset-2 col-sm-4 control-label">
       <div class="col-sm-6">
         <div class = "center-block">
-          <%= link_to "Delete User", user_path(@user), method: :delete, class: 'btn btn-danger' %>
+          <%= link_to "Delete User", user_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         </div>
       </div>
     </div>
