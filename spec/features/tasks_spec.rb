@@ -11,7 +11,7 @@ require 'rails_helper'
       click_on "Create Task"
       visit tasks_path
       expect(page).to have_content("Organize Notes")
-      # expect(page).to have_content("2014-02-11")
+      
 
       click_on "Edit"
       fill_in "Description", with: "Organize Notes & Files"
