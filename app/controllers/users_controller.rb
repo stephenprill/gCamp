@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    users_param = params.require(:user).permit(:first_name, :last_name, :email)
+    users_param=params.require(:user).permit(:first_name, :last_name, :email)
     @user = User.find(params[:id])
     if @user.update(users_param)
       flash[:success] = "User was successfully updated"
