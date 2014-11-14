@@ -22,7 +22,8 @@
   <div class="form-group">
     <%= f.label :due_date, class: 'col-sm-2 control-label' %>
     <div class="col-sm-4">
-      <%= f.date_field :due_date, class: 'form-control', span: 'glyphicon glyphicon-calendar'  %>
+      <%= f.date_field :due_date, class: 'form-control', class: "glyphicon glyphicon-calendar"%>
+
     </div>
   </div>
 
@@ -30,7 +31,7 @@
       <div class="col-sm-offset-2 col-sm-10">
         <div class="checkbox">
           <% if @edit_page %>
-            <%= f.check_box :complete, class: 'checkbox' %>
+            <%= f.check_box :complete, class: 'checkbox-inline' %>
             <%= f.label :complete %>
           <% end %>
         </div>
