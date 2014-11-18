@@ -6,5 +6,8 @@ class Task < ActiveRecord::Base
     if due_date.present? && due_date < Date.today
       errors.add(:due_date, "can only be today or later.")
     end
+
+  belongs_to :project
+  
   end
 end

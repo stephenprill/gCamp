@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :projects do
   resources :tasks
+
+end 
   resources :users
-  resources :projects
 
   root "pages#index"
   get 'about' => 'pages#about_us', as: :about_us

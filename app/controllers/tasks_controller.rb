@@ -1,15 +1,23 @@
 class TasksController < ApplicationController
+
+  before_action do
+    @project = Project.find(params[:project_id])
+  end
+
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+
+
+
 
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = @project.tasks
 
     if params[:type] == "all"
-      @tasks = Task.all
+      @tasks = @project.tasks
     elsif params[:type] == "incomplete"
-      @tasks = Task.where(complete:false)
+      @tasks = @project.tasks.where(complete:false)
 
     end
   end
@@ -17,13 +25,14 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    @task = @project.tasks.find(params[:id])
     @show_page = true
   end
 
   # GET /tasks/new
   def new
     @new_page = true
-    @task = Task.new
+    @task = @project.tasks.new
   end
 
   # GET /tasks/1/edit
@@ -34,7 +43,7 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    @task = Task.new(task_params)
+    @task = @project.tasks.new(task_params)
 
     respond_to do |format|
       if @task.save
@@ -64,20 +73,16 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
-    @task = Task.find(params[:id])
     if @task.destroy
       flash[:success] = "Task was successfully deleted"
     redirect_to tasks_path
     end
   end
 
-
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
-      @task = Task.find(params[:id])
+      @task = @project.task.find(params[:id])
       @task_new = false
     end
 
@@ -87,6 +92,6 @@ class TasksController < ApplicationController
     end
 
 
-  
+
 
 end

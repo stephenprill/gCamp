@@ -2,9 +2,9 @@
 <div class="container">
   <div class = "page-header">
     <div class="pull-right">
-      <%= link_to_if params[:type] != "all", "All", tasks_path(type: "all") %> |
-      <%= link_to_if params[:type] == "all", "Incomplete", tasks_path(type: "incomplete") %>
-      <%= link_to 'Create Task', new_task_path, class: 'btn btn-info' %>
+      <%= link_to_if params[:type] != "all", "All", project_tasks_path(type: "all") %> |
+      <%= link_to_if params[:type] == "all", "Incomplete", project_tasks_path(type: "incomplete") %>
+      <%= link_to 'Create Task', new_project_task_path, class: 'btn btn-info' %>
     </div>
 
     <h3>Tasks</h3>
@@ -31,11 +31,11 @@
         <td><%= task.due_date.try(:strftime, "%m/%d/%Y") %></td>
 
         <td width="30px">
-          <%= link_to 'Show', task_path(task), class: 'btn btn-success pull-right' %>
+          <%= link_to 'Show',  project_task(task), class: 'btn btn-success pull-right' %>
         </td>
 
         <td width="30px">
-          <%= link_to 'Edit', edit_task_path(task), class: 'btn btn-info pull-right' %>
+          <%= link_to 'Edit', edit_project_task(task), class: 'btn btn-info pull-right' %>
         </td>
 
         <td width="30px">
@@ -47,57 +47,3 @@
     </tbody>
   </table>
  </div>
-
-
- <!-- <html [class:”form-horizontal”}>
- <div class="pull-right">
-     </div>
-     <div class="pull-left">
- </div>
- <div class="pull-right">
-   </div>
-
- <div class="container">
-       <div class = "page-header">
-
-                       <div class="wrapper clearfix">
-
- <div class="col-md-8">
-          <h1>Tasks</h1>
- </div>
-
-
-
-
- <div class="col-md-4">
-   <div class="pull-right">
-       <%= link_to_if params[:type] != "all", "All", tasks_path(type: "all") %> |
-       <%= link_to_if params[:type] == "all", "Incomplete", tasks_path(type: "incomplete") %>
-
-
-
-       <%= link_to 'Create Task', new_task_path, class: 'btn btn-info pull-right' %>
-   </div>
- </div>
-
-
-
-                       </div>
-
-       </div>
-
- </div>
-
-____
-
-
-  <div class="col-md-1.pull-right">
-                <div class="pull-right">
-    <div class="col-md-1.pull-right">
-              <div class="pull-right">
-    </div>
-            </div>
-  </div>
-            </div>
-
-     -->
