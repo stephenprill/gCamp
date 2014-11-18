@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   resources :projects do
   resources :tasks
+    end 
 
-end 
   resources :users
 
   root "pages#index"

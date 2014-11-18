@@ -60,18 +60,8 @@
                   </div>
                     </div>
 
-<% @quotes.each do |quote| %>
- <p class="quotetext"><%= quote.text %></p>
- <p class="quoteauthor"><%= quote.author %></p>
- <hr>
-<% end %>
-
-<!--
-    <p>
-      <% quotes = ['“Failure is not an option to me.” - Arnold Schwarzenegger', '“Your time is limited, so don’t waste it living someone else’s life.” - Steve Jobs', '“Better Ingredients, Better Pizza” - Papa John'] %>
-      <% quotes.each do |quote| %>
-      <%= quote =%><br><br>
-      <% end %>
-    </p>
--->
-<!-- /container -->
+            <% @quotes.each do |quote| %>
+             <p class="quotetext"><%= quote.text %></p>
+             <p class="quoteauthor"><%= quote.author %></p>
+             <hr>
+            <% end %>

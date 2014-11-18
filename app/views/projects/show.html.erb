@@ -1,6 +1,11 @@
-
 <div class = "container">
   <div class = "page-header">
+
+    <ol class="breadcrumb">
+      <li><%= link_to "Projects", projects_path %></li>
+      <li class="active">Tasks</li>
+    </ol>
+
     <div class="pull-right">
 
       <p id="notice"><%= notice %></p>
@@ -8,8 +13,11 @@
       <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-info pull-right'  %>
 
     </div>
-        <h3><%= @project.name %></h3>
-  </div>
 
-<%= link_to "Tasks", project_tasks_path(@project) %>
-</div>
+        <h2><%= @project.name %></h2>
+
+    </div>
+
+    <%= link_to "#{pluralize(@project.tasks.count, 'task')}", project_tasks_path(@project) %>
+
+  </div>

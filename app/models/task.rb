@@ -1,5 +1,7 @@
 class Task < ActiveRecord::Base
 
+  belongs_to :project  
+
   validate :check_due_date, on: :create
 
   def check_due_date
@@ -7,7 +9,6 @@ class Task < ActiveRecord::Base
       errors.add(:due_date, "can only be today or later.")
     end
 
-  belongs_to :project
-  
+
   end
 end
