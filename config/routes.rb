@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  resources :users
 
   resources :projects do
   resources :tasks
-    end 
+  resources :memberships
+    end
 
-  resources :users
+
+
 
   root "pages#index"
   get 'about' => 'pages#about_us', as: :about_us
