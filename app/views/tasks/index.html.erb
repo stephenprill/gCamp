@@ -4,9 +4,10 @@
 
     <ol class="breadcrumb">
       <li><%= link_to "Projects", projects_path %></li>
-      <li class="active">Tasks</li>
+      <li><%= link_to @project.name, project_path(@project) %> </li>
+      <li class="active">Task</li>
     </ol>
-    
+
     <div class="pull-right">
       <%= link_to_if params[:type] != "all", "All", project_tasks_path(type: "all") %> |
       <%= link_to_if params[:type] == "all", "Incomplete", project_tasks_path(type: "incomplete") %>

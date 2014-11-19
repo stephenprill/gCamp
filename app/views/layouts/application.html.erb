@@ -52,7 +52,9 @@
 
     <%= yield %>
 
-    <footer class="container">
+</div>
+<div class="container">
+      <div class="footer">
 
         <%= link_to "About", about_us_path %> |
         <%= link_to "Terms", terms_path %> |
@@ -61,7 +63,7 @@
         <%= link_to "Projects", projects_path %>
 
 
-      <div class="col-md-offset-10">
+      <div class="pull-right">
         <%= link_to "https://www.linkedin.com/in/stephenprill" do %>
           <%= image_tag("linked_in.png", width: "20em") %>
         <% end %> |
@@ -76,10 +78,11 @@
 
         <%= link_to "https://students.gschool.it/" do %>
           <%= image_tag("gschool.png", width: "20em") %>
-        <% end %> |
+        <% end %> 
 
       </div>
-    </footer>
+</div>
+</div>
 
 
 
