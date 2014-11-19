@@ -20,22 +20,20 @@
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-brand">
-          <%= link_to "gCamp", root_path, style: 'color:#FFFFFF;' %>
+        <div class="navbar-header">
+          <%= link_to "gCamp", root_path, class: 'navbar-brand', style: 'color:#FFFFFF;' %>
           <!-- <a class="navbar-brand" href="#">gCamp</a> -->
         </div>
 
-        <div class = "navbar-brand pull-right">
 
+        <div class = "ul nav navbar-nav navbar-right">
           <% if current_user %>
-          <%= link_to current_user.full_name, user_path(current_user), style: 'color:#FFFFFF;' %></font>
-          <%= link_to "Sign Out", signout_path, style: 'color:#FFFFFF;' %>
+          <%= link_to current_user.full_name, user_path(current_user), style: 'color:#FFFFFF;' %>
+          <%= link_to "| Sign Out", signout_path, style: 'color:#FFFFFF;' %>
           <% else %>
-          <%= link_to "Sign Up", signup_path, style: 'color:#FFFFFF;'  %>
-            |
+          <%= link_to "Sign Up |", signup_path, style: 'color:#FFFFFF;'  %>
           <%= link_to "Sign In", signin_path, style: 'color:#FFFFFF;'  %>
           <% end %>
-
         </div>
       </div>
     </div>
@@ -78,7 +76,7 @@
 
         <%= link_to "https://students.gschool.it/" do %>
           <%= image_tag("gschool.png", width: "20em") %>
-        <% end %> 
+        <% end %>
 
       </div>
 </div>

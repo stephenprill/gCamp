@@ -3,7 +3,10 @@ require 'rails_helper'
   feature "Tasks" do
 
     scenario 'User creates, edits, deletes task' do
-      visit tasks_path
+      project1 = Project.create!(
+        name: "Awesome Project"
+      )
+      visit project_tasks_path(project)
       click_on "Create Task"
       fill_in "Description", with: "Organize Notes"
       fill_in "Due date", with: "02/11/2014"
@@ -11,7 +14,7 @@ require 'rails_helper'
       click_on "Create Task"
       visit tasks_path
       expect(page).to have_content("Organize Notes")
-      
+
 
       click_on "Edit"
       fill_in "Description", with: "Organize Notes & Files"
