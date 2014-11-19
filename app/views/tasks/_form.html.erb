@@ -31,16 +31,14 @@
     </div>
   </div>
 
+    <% if @edit_page  %>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <% if @edit_page %>
             <%= f.check_box :complete, class: 'checkbox-inline' %>
             <%= f.label :complete %>
-          <% end %>
-        </div>
       </div>
     </div>
+      <% end %>
 
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">

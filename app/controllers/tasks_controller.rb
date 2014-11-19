@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action do
     @project = Project.find(params[:project_id])
   end
-  
+
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
 
@@ -30,8 +30,9 @@ class TasksController < ApplicationController
   end
 
   # GET /tasks/1/edit
-  #@edit_page = true
+
   def edit
+    @edit_page = true
   end
 
   def create
