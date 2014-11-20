@@ -5,10 +5,25 @@ class MembershipsController < ApplicationController
   end
 
   def index
-    @membership = Membership.all
+    @memberships = Membership.all
+    @membership = Membership.new
   end
 
-  def task_params
+  def create
+    @membership = @project.membership.new(membership_params)
+    if @membership.save
+      redirect_to project_path(@project, @membership)
+    else
+      render :new
+    end
+  end
+
+  private
+    def set_task
+      @membership = @project.membership.find(params[:id])
+    end
+
+  def membership_params
     params.require(:task).permit(:project_id, :user_id, :role )
   end
 
