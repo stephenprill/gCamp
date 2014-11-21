@@ -9,12 +9,14 @@ class MembershipsController < ApplicationController
     @membership = Membership.new
   end
 
+
+
   def create
-    @membership = @project.membership.new(membership_params)
+    @membership = @project.memberships.new(membership_params)
     if @membership.save
-      redirect_to project_path(@project, @membership)
+      redirect_to project_memberships_path(@project)
     else
-      render :new
+      render :index
     end
   end
 
@@ -24,7 +26,7 @@ class MembershipsController < ApplicationController
     end
 
   def membership_params
-    params.require(:task).permit(:project_id, :user_id, :role )
+    params.require(:membership).permit(:user_id, :role )
   end
 
 

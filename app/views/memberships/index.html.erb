@@ -9,7 +9,8 @@
 
   <h3> <%= @project.name %>: Manage Members</h3>
     <div class="well">
-    <form class="form-inline" role="form">
+
+
 
     <%= form_for [@project, @membership] do |f| %>
 
@@ -24,9 +25,5 @@
 
         </div>
       </div>
-
-      <h2><%= @membership.project.full_name %></h2>
-
       <% end %>
-    </form>
   </div>
