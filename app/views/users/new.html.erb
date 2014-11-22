@@ -4,15 +4,7 @@
   <h3>New User</h3>
   <%= form_for(@user, :html => { class: 'form-horizontal'}) do |f| %>
 
-<% if @user.errors.present? %>
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-
-        <li class="text-danger"><%= message %></li>
-
-    <% end %>
-  </ul>
-<% end %>
+  <%= render "shared/errors", instance: @user %>
 
     <div class = "form-group">
         <%= f.label :first_name, class: "col-sm-3 control-label" %>

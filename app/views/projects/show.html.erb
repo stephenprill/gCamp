@@ -5,10 +5,11 @@
       <li><%= link_to "Projects", projects_path %></li>
       <li class="active">Tasks</li>
     </ol>
+      <% if notice.is_a? String %>
+      <div class="text-center alert alert-info"><%= notice %></div>
+      <% end %>
 
-    <div class="pull-right">
-
-      <p id="notice"><%= notice %></p>
+      <div class="pull-right">
       <div class = "pull-right">
       <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-info'  %>
       <%= link_to 'Destroy', project_path(@project), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
