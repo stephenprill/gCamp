@@ -29,6 +29,5 @@ require 'rails_helper'
       click_on "Delete User"
       expect(page).to have_no_content("Chaka KHAAAAAAN")
 
-end
-
+  end
 end
