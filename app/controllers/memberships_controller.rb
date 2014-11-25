@@ -7,6 +7,9 @@ class MembershipsController < ApplicationController
   def index
     @memberships = Membership.all
     @membership = Membership.new
+    # @users = @project.users
+    # Membership.where(product_id: @product.id)
+    @project_memberships = @project.memberships
   end
 
 
@@ -16,6 +19,7 @@ class MembershipsController < ApplicationController
     if @membership.save
       redirect_to project_memberships_path(@project), notice: "#{@membership.user.full_name} was succesfully created"
     else
+      @project_memberships = @project.memberships - [@membership]
       render :index
     end
   end
