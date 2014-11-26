@@ -34,7 +34,7 @@ class TasksController < ApplicationController
   def edit
     @edit_page = true
   end
-
+f.submit :task, project_tasks_path(@project, @task)
   def create
     @task = @project.tasks.new(task_params)
       if @task.save

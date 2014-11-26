@@ -1,6 +1,7 @@
 class Task < ActiveRecord::Base
 
-  belongs_to :project  
+  belongs_to :project
+  has_many :comments
 
   validate :check_due_date, on: :create
 
