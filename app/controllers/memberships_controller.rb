@@ -15,10 +15,13 @@ class MembershipsController < ApplicationController
 
 
   def create
+    # p @project.membership.length saved 
     @membership = @project.memberships.new(membership_params)
+    #@membership = Membership.new(params.require(:membersihp).permit(:user_id, :role))
     if @membership.save
       redirect_to project_memberships_path(@project), notice: "#{@membership.user.full_name} was succesfully created"
     else
+      # p @project.membership.length not saved in dB then hands both to view and tries to iterate over them
       @project_memberships = @project.memberships - [@membership]
       render :index
     end
