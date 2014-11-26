@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
 
-before_action do
+  before_action do
     @project = Project.find(params[:project_id])
-end
+  end
 
 
-def create
-    #@comment = 
+  def create
+    #@comment =
     # @comment.save
   end
 end

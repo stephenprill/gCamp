@@ -5,18 +5,8 @@
 
 <%= form_for @user, url: signup_path do |f| %>
 
-<div class="alert alert-danger" role="alert">
+<%= render "shared/errors", instance: @user %>
 
-  <% if @user.errors.present? %>
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-
-          <li class="text-danger"><%= message %></li>
-
-      <% end %>
-    </ul>
-  <% end %>
-</div> 
 
   <div>
     <%= f.label :first_name %>

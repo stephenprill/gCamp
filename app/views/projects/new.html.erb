@@ -3,6 +3,8 @@
     <h3>Create Project</h3>
   </div>
 
+  <%= render "shared/errors", instance: @project %>
+  
 
   <%= form_for(@projects, :html => { class: 'form-horizontal'}) do |f| %>
 
