@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
   resources :users
-  resources :comments
   resources :projects do
-  resources :tasks
-  resources :memberships
-    end
+    resources :tasks
+    resources :memberships
+  end
 
-post
-get
-
-
-
+  post 'comments' => 'comments#create'
 
   root "pages#index"
   get 'about' => 'pages#about_us', as: :about_us

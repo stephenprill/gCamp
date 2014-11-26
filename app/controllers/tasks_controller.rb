@@ -21,6 +21,7 @@ class TasksController < ApplicationController
   #@task = @project.tasks.find(params[:id])
   #@show_page = true
   def show
+    @comment = @task.comments.new
   end
 
   # GET /tasks/new
@@ -34,7 +35,7 @@ class TasksController < ApplicationController
   def edit
     @edit_page = true
   end
-f.submit :task, project_tasks_path(@project, @task)
+
   def create
     @task = @project.tasks.new(task_params)
       if @task.save
