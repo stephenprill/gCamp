@@ -1,7 +1,7 @@
 class Task < ActiveRecord::Base
 
   belongs_to :project
-  has_many :comments
+  has_many :comments, dependent: :destroy 
 
   validate :check_due_date, on: :create
 

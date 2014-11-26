@@ -6,7 +6,7 @@ end
 
 
 def create
-    @comment = 
+    #@comment = 
     # @comment.save
   end
 end

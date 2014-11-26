@@ -5,7 +5,20 @@
   </div>
 <% end %>
 
-<%= link_to 'Edit', edit_project_task_path(@project, @task) %>
+<div class="page-header">
+  <div class="pull-right">
+<%= link_to 'Edit', edit_project_task_path(@project, @task), class: 'btn btn-info' %>
+</div>
+  <h3><%= @task.description %></h3>
+</div>
+
+<ol class="breadcrumb">
+  <li><%= link_to "Projects", projects_path %></li>
+  <li><%= link_to @project.name, projects_path(@project) %></li>
+  <li><%= link_to "Tasks", project_tasks_path %></li>
+  <li class="active">Tasks</li>
+</ol>
+
 
 
 <p>
@@ -24,21 +37,43 @@
   <%= @task.due_date.try(:strftime, "%m/%d/%Y") %>
 </p>
 
+  <h3>Comments</h3>
 
-<h3>Comments</h3>
-<hr>
-  <% @task.comments.all.each do |comment| %>
-  <!-- <%= link_to comment.user.full_name, user_path %>
-  <%= time_ago_in_words(comment.created_at) %> ago  -->
-  <%= comment.comment %><br><br><!-- calling comment from table -->
 
-  <% end %>
+<% @task.comments.all.each do |comment| %>
+  <div class="row">
 
-  <%= form_for @comment do |f| %>
-  <%= f.label :comment %>
-  <%= f.text_area :comment %>
+    <div class="col-xs-3">
+      <%= link_to comment.user.full_name, user_path %>
+      <div class="text-muted">
+        <%= time_ago_in_words(comment.created_at) %> ago
+      </div>
+    </div>
 
-  <%= f.submit %>
+    <div class="col-xs-9">
+      <%= comment.comment %>
+    </div>
+
+  </div>
+<% end %>
+
+<br>
+  <%= form_for [@projects, @tasks, @comment], html: {class: "form-horizontal"} do |f| %>
+
+    <div class="form-group">
+      <div class= 'col-xs-offset-3 col-xs-9 ' >
+        <%= f.text_area :comment, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <div class= 'col-xs-offset-3 col-xs-9 ' >
+          <%= f.submit 'Add Comment', class: 'btn btn-primary' %>
+        </div>
+      </div>
+
+
+
 
   <% end %>
 
