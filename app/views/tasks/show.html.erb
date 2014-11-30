@@ -15,7 +15,7 @@
   <ol class="breadcrumb">
     <li><%= link_to "Projects", projects_path %></li>
     <li><%= link_to @project.name, projects_path(@project) %></li>
-    <li><%= link_to "Tasks", project_tasks_path %></li>
+    <li><%= link_to "Tasks", project_path(@project, @task) %></li> 
     <li class="active">Show</li>
   </ol>
 
@@ -52,12 +52,12 @@
       <div class="col-xs-9">
         <%= comment.comment %>
       </div>
-
     </div>
-  <% end %>
+<% end %>
 
   <br>
-  
+
+  <% if current_user %>
     <%= form_for [@projects, @tasks, @comment], html: {class: "form-horizontal"} do |f| %>
 
       <div class="form-group">
@@ -68,17 +68,13 @@
         </div>
       </div>
 
-
-
       <div class="form-group">
           <div class= 'col-xs-offset-3 col-xs-9 ' >
             <%= f.submit 'Add Comment', class: 'btn btn-primary' %>
           </div>
         </div>
 
-
-
-
+        <% end %>
     <% end %>
 
   </div>
