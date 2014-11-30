@@ -2,20 +2,20 @@
   <div class="container">
     <div class = "page-header">
 
-      <ol class="breadcrumb">
-        <li><%= link_to "Projects", projects_path %></li>
-        <li><%= link_to @project.name, project_path(@project) %> </li>
-        <li class="active">Task</li>
-      </ol>
+        <div class="pull-right">
+          <%= link_to_if params[:type] != "all", "All", project_tasks_path(type: "all") %> |
+          <%= link_to_if params[:type] == "all", "Incomplete", project_tasks_path(type: "incomplete") %>
+          <%= link_to 'New Task', new_project_task_path, class: 'btn btn-info' %>
+        </div>
 
-      <div class="pull-right">
-        <%= link_to_if params[:type] != "all", "All", project_tasks_path(type: "all") %> |
-        <%= link_to_if params[:type] == "all", "Incomplete", project_tasks_path(type: "incomplete") %>
-        <%= link_to 'Create Task', new_project_task_path, class: 'btn btn-info' %>
-      </div>
+        <h3>Tasks for <%= @project.name %></h3>
+    </div>
 
-      <h3>Tasks for <%= @project.name %></h3>
-  </div>
+    <ol class="breadcrumb">
+      <li><%= link_to "Projects", projects_path %></li>
+      <li><%= link_to @project.name, project_path(@project) %> </li>
+      <li class="active">Tasks</li>
+    </ol>
 
 
     <table class="table table-condensed">
@@ -34,20 +34,18 @@
         <tr>
           <td><%= link_to task.description, project_task_path(@project, task) %>
 
-            <span class="badge"><%= @project.task.comments.count %></span></td>
+            <span class="badge"><%= task.comments.count %></span></td>
           <td><%= task.complete %></td>
           <td><%= task.due_date.try(:strftime, "%m/%d/%Y") %></td>
 
-          <td width="30px">
-            <%= link_to 'Show',  project_task_path(@project, task), class: 'btn btn-success pull-right' %>
-          </td>
+
 
           <td width="30px">
             <%= link_to 'Edit', edit_project_task_path(@project, task), class: 'btn btn-info pull-right' %>
           </td>
 
           <td width="30px">
-            <%= link_to 'Destroy', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger pull-right' %>
+            <%= link_to '', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, class: 'glyphicon glyphicon-remove' %>
           </td>
         </tr>
 
