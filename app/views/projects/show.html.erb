@@ -1,10 +1,7 @@
 <div class = "container">
   <div class = "page-header">
 
-    <ol class="breadcrumb">
-      <li><%= link_to "Projects", projects_path %></li>
-      <li class="active">Tasks</li>
-    </ol>
+
       <% if notice.is_a? String %>
       <div class="text-center alert alert-info"><%= notice %></div>
       <% end %>
@@ -19,6 +16,11 @@
         <h2><%= @project.name %></h2>
 
     </div>
+
+    <ol class="breadcrumb">
+      <li><%= link_to "Projects", projects_path %></li>
+      <li class="active">Tasks</li>
+    </ol>
 
     <%= link_to "#{pluralize(@project.tasks.count, 'Task')}", project_tasks_path(@project) %><br><br>
     <%= link_to "#{pluralize(@project.memberships.count, 'Membership')}", project_memberships_path(@project) %><br><br>
