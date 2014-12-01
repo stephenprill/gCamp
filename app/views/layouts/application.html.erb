@@ -13,10 +13,6 @@
     <title>gCamp</title>
   </head>
 
-
-
-
-
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
@@ -28,26 +24,20 @@
 
         <div class = "nav navbar-nav pull-right">
           <% if current_user %>
-          <%= link_to current_user.full_name, user_path(current_user), style: 'color:#FFFFFF;' %>
-          <%= link_to "| Sign Out", signout_path, style: 'color:#FFFFFF;' %>
+            <%= link_to current_user.full_name, user_path(current_user), style: 'color:#FFFFFF;' %>
+            <%= link_to "| Sign Out", signout_path, style: 'color:#FFFFFF;' %>
           <% else %>
-          <%= link_to "Sign Up |", signup_path, style: 'color:#FFFFFF;'  %>
-          <%= link_to "Sign In", signin_path, style: 'color:#FFFFFF;'  %>
+            <%= link_to "Sign Up |", signup_path, style: 'color:#FFFFFF;'  %>
+            <%= link_to "Sign In", signin_path, style: 'color:#FFFFFF;'  %>
           <% end %>
         </div>
       </div>
     </div>
 
-    <div class = "container">
-      <% if flash[:success] %>
-    <div class="text-center alert alert-success" role="alert">
-      <%= flash[:success] %>
-      <% end %>
-      </div>
-    </div>
+    
 
     <div class = "container">
-    <% if notice.is_a? String %>
+        <% if notice.is_a? String %>
       <div class="text-center alert alert-info" >
         <%= notice %>
       </div>
@@ -55,9 +45,8 @@
 
     <% end %>
 
-  <%= yield %>
+    <%= yield %>
 
-</div>
 <div class="container">
       <div class="footer">
 
@@ -86,7 +75,7 @@
         <% end %>
 
       </div>
-</div>
+    </div>
 </div>
 
 

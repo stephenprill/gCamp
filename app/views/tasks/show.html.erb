@@ -1,10 +1,10 @@
-
+<div class="container">
   <div class="page-header">
     <div class="pull-right">
-  <%= link_to 'Edit', edit_project_task_path(@project, @task), class: 'btn btn-info' %>
-  </div>
-    <h3><%= @task.description %></h3>
-  </div>
+      <%= link_to 'Edit', edit_project_task_path(@project, @task), class: 'btn btn-info' %>
+    </div>
+      <h3><%= @task.description %></h3>
+    </div>
 
   <ol class="breadcrumb">
     <li><%= link_to "Projects", projects_path %></li>
@@ -13,13 +13,10 @@
     <li class="active">Show</li>
   </ol>
 
-
-
   <p>
     <strong>Description:</strong>
     <%= @task.description %>
   </p>
-
 
   <p>
     <strong>Completed:</strong>
@@ -31,7 +28,7 @@
     <%= @task.due_date.try(:strftime, "%m/%d/%Y") %>
   </p>
 
-    <h3>Comments</h3>
+  <h3>Comments</h3>
 
 
   <% @task.comments.all.each do |comment| %>
@@ -62,7 +59,7 @@
         </div>
       </div>
 
-      <div class="form-group">
+        <div class="form-group">
           <div class= 'col-xs-offset-3 col-xs-9 ' >
             <%= f.submit 'Add Comment', class: 'btn btn-primary' %>
           </div>
@@ -72,3 +69,4 @@
     <% end %>
 
   </div>
+</div>
