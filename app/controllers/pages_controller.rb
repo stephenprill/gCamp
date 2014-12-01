@@ -2,16 +2,16 @@ class PagesController < ApplicationController
   def index
 
     quote1 = Quote.new
-    quote1.text = "Big Gulps huh? Welp, see you later."
-    quote1.author = "Jim Carey"
+    quote1.text = "Hey, guys. Whoa, Big Gulps, huh? All right! Welp, see you later."
+    quote1.author = "Lloyd Christmas"
 
     quote2 = Quote.new
-    quote2.text = "Winter is coming."
-    quote2.author = "Ned Stark"
+    quote2.text = "Winter is Coming."
+    quote2.author = "Words of House Stark"
 
     quote3 = Quote.new
-    quote3.text = "The best part of waking up is Foldgers in your cup."
-    quote3.author = "Wilbur Foldgers "
+    quote3.text = "Yes, Pete, it is. Actually, it's pronounced 'mill-e-wah-que' which is Algonquin for 'the good land.'"
+    quote3.author = "Alice Cooper "
 
     @quotes = [quote1, quote2, quote3]
 
