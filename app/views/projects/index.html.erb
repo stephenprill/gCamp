@@ -1,9 +1,10 @@
-<div class = "container">
+
   <div class = "page-header">
 
     <%= link_to "Create Project", new_project_path, class: 'btn btn-primary pull-right' %>
       <h3>Projects</h3>
-    </div>
+
+  </div>
 
     <table class="table table-condensed">
       <thead>
@@ -21,12 +22,6 @@
             <td><%= link_to (project.memberships.count), project_memberships_path(project_id: project.id) %></td>
             <td><%= link_to (project.tasks.count), project_tasks_path(project_id: project.id) %></td>
           </tr>
-
-          <% end %>
-
+        <% end %>
       </tbody>
     </table>
-
-  </div>
-
-</div>
