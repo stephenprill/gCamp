@@ -21,8 +21,5 @@ require 'rails_helper'
 
       click_on "Destroy"
       expect(page).to have_content("Project was successfully destroyed")
-
-
-end
-
+    end
 end

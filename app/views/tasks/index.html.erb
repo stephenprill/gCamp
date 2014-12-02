@@ -5,7 +5,7 @@
         <div class="pull-right">
           <%= link_to_if params[:type] != "all", "All", project_tasks_path(type: "all") %> |
           <%= link_to_if params[:type] == "all", "Incomplete", project_tasks_path(type: "incomplete") %>
-          <%= link_to 'New Task', new_project_task_path, class: 'btn btn-info' %>
+          <%= link_to 'New Task', new_project_task_path(project_id: @project.id), class: 'btn btn-info' %>
         </div>
 
         <h3>Tasks for <%= @project.name %></h3>

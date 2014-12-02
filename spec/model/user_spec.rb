@@ -15,7 +15,7 @@ describe User do
     expect(user.errors[:email].present?).to eq(true)
   end
 
-  it "allows user for duplicate emails" do
+  it "does not allow duplicate emails" do
     User.create!(first_name: "Chaka", last_name: "Khan", email: "chaka@khan.com", password: "pass")
     user = User.new(email:"chaka@khan.com")
     user.valid?

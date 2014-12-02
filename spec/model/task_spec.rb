@@ -18,18 +18,18 @@ require 'rails_helper'
     end
 
     it "success on editing date on existing task" do
-      task = Task.create!(description: "buy presents", due_date: "11/12/2014")
+      task = Task.create!(description: "buy presents", due_date: Date.new(2020, 11, 12))
       task.due_date = "10/10/2014"
       task.valid?
       expect(task.errors[:due_date].present?).to eq(false)
     end
 
-    it "succuss on editing exisiting date to future date"
-      task = Task.create!(description: "buy presents", due_date: "11/01/2014")
-      task.due_date = "12/12/2014"
+    it "succuss on editing exisiting date to future date" do
+      task = Task.create!(description: "buy presents", due_date: "11/01/2020")
+      task.due_date = "12/30/2020"
       task.valid?
       expect(task.errors[:due_date].present?).to eq(false)
-      task.due_date = "12/11/2014"
+      task.due_date = "12/30/2000"
       task.valid?
       expect(task.errors[:due_date].present?).to eq(false)
     end
