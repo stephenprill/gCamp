@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @projects = Project.new
+    @project = Project.new
   end
 
   def create
@@ -18,6 +18,8 @@ class ProjectsController < ApplicationController
         # if @membership.save
         #   redirect_to project_memberships_path(@project), notice: "#{@membership.user.full_name} was added successfully"
       redirect_to projects_path, notice: "#{@project.name} was successfully created."
+    else
+      render :new
     end
   end
 

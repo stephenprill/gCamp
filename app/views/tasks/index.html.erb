@@ -1,7 +1,6 @@
 
   <div class="container">
     <div class = "page-header">
-
         <div class="pull-right">
           <%= link_to_if params[:type] != "all", "All", project_tasks_path(type: "all") %> |
           <%= link_to_if params[:type] == "all", "Incomplete", project_tasks_path(type: "incomplete") %>

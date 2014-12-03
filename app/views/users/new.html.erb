@@ -4,7 +4,11 @@
   <h3>New User</h3>
   <%= form_for(@user, :html => { class: 'form-horizontal'}) do |f| %>
 
-  <%= render "shared/errors", instance: @user %>
+  <div class="form-group row">
+    <div class="col-sm-offset-3 col-md-6 ">
+      <%= render "shared/errors", instance: @user %>
+    </div>
+  </div>
 
     <div class = "form-group">
         <%= f.label :first_name, class: "col-sm-3 control-label" %>

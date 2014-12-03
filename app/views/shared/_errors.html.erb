@@ -1,7 +1,7 @@
 <% if instance.errors.any? %>
     <div class="alert alert-danger">
-      <h4><%= pluralize(instance.errors.count, "error") %>
-         prohibited this task from being saved:</h4>
+      <p><strong><%= pluralize(instance.errors.count, "error") %>
+         prohibited this task from being saved:</strong></p>
 
         <ul>
           <% instance.errors.full_messages.each do |message| %>
