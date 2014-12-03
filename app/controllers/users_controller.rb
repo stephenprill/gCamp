@@ -12,12 +12,12 @@ class UsersController < ApplicationController
     users_param = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     @user = User.new(users_param)
     if @user.save
-      flash[:success] = "User was successfully created"
-      redirect_to users_path
+      redirect_to users_path, notice: "#{@user.full_name} was successfully created"
     else
       render :new
     end
   end
+
 
   def edit
     @user = User.find(params[:id])
@@ -27,8 +27,7 @@ class UsersController < ApplicationController
     users_param=params.require(:user).permit(:first_name, :last_name, :email)
     @user = User.find(params[:id])
     if @user.update(users_param)
-      flash[:success] = "User was successfully updated"
-      redirect_to users_path
+      redirect_to users_path, notice: "#{@user.full_name} was successfully updated"
     else
       render :edit
     end
@@ -42,8 +41,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user.destroy
-      flash[:success] = "User was successfully deleted"
-      redirect_to users_path
+      redirect_to users_path, notice: "#{@user.full_name} was successfully deleted"
     end
   end
 
