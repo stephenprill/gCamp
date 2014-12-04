@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class PagesController < PublicController
   def index
 
     quote1 = Quote.new
