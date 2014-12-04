@@ -24,11 +24,11 @@
               <br>
                 <p>gCamp is extremely active. Check out our killer stats below! </p>
                 <strong>
-                  <%= "#{pluralize(Project.all.count, 'Project')}" %>,
-                  <%= "#{pluralize(Task.all.count, 'Task')}" %>,
-                  <%= "#{pluralize(Membership.all.count, 'Project Members')}" %>,
-                  <%= "#{pluralize(User.all.count, 'User')}" %>,
-                  <%= "#{pluralize(Comment.all.count, 'Comment')}" %> 
+                  <%= pluralize(Project.all.count, 'Project') %>,
+                  <%= pluralize(Task.all.count, 'Task') %>,
+                  <%= pluralize(Membership.all.count, 'Project Members') %>,
+                  <%= pluralize(User.all.count, 'User') %>,
+                  <%= pluralize(Comment.all.count, 'Comment') %>
                 </strong>
   </div>
               <br><hr>
