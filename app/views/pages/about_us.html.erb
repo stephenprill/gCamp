@@ -12,7 +12,7 @@
 
             <div class ="col-md-8">
 
-              <p>  Get organized and increase productivity with your team.<p>
+              <p>Get organized and increase productivity with your team.<p>
 
               <p>We are dedicated to the makers, the creators, the risk-takers. We wake up in the middle of the night and furiously write down ideas about how to make your online life better.</p>
 
@@ -24,11 +24,11 @@
               <br>
                 <p>gCamp is extremely active. Check out our killer stats below! </p>
                 <strong>
-                  <%= Project.all.count %> Projects,
-                  <%= Task.all.count %> Tasks,
-                  <%= Membership.all.count %> Project Members,
-                  <%= User.all.count %> Users,
-                  <%= Comment.all.count %> Comments
+                  <%= "#{pluralize(Project.all.count, 'Project')}" %>,
+                  <%= "#{pluralize(Task.all.count, 'Task')}" %>,
+                  <%= "#{pluralize(Membership.all.count, 'Project Members')}" %>,
+                  <%= "#{pluralize(User.all.count, 'User')}" %>,
+                  <%= "#{pluralize(Comment.all.count, 'Comment')}" %> 
                 </strong>
   </div>
               <br><hr>
