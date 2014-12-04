@@ -66,14 +66,14 @@ due_date: 5.days.from_now
   Comment.create!(
   task: task1,
   user: owner,
-  body: Faker::Lorem.sentence
+  comment: Faker::Lorem.sentence
   )
 end
 
 Comment.create!(
 task: task2,
 user: member,
-body: Faker::Lorem.sentence
+comment: Faker::Lorem.sentence
 )
 
 single_owner = Project.create!(name: 'Single Owner')
