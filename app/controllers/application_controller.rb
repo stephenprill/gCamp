@@ -8,16 +8,15 @@ class ApplicationController < ActionController::Base
   def ensure_current_user
     unless current_user
     redirect_to signup_path
+    end
   end
-end
 
   def current_user
     if session[:user_id]
     User.find_by(id: session[:user_id])
     end
   end
-
-
+  
   helper_method :current_user
 
 end

@@ -4,6 +4,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem "capybara"
   gem 'launchy'
+  gem 'pry-rails'
 end
 
 gem 'faker'

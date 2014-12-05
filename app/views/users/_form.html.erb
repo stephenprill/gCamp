@@ -1,43 +1,54 @@
 <%= form_for(@user, :html => { class: 'form-horizontal'}) do |f| %>
 
-<div class="form-group">
-  <div class="col-sm-6 col-sm-offest-2">
-    <%= render "shared/errors", instance: @user %>
+  <div class="form-group">
+    <div class="col-sm-4 col-sm-offset-2">
+      <%= render "shared/errors", instance: @user %>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <%= f.label :first_name, class: 'col-sm-2 control-label'  %>
-  <div class="col-sm-4">
-    <%= f.text_field :first_name, class: 'form-control' %>
+  <div class="form-group">
+    <%= f.label :first_name, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_field :first_name, class: 'form-control' %>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <%= f.label :last_name, class: 'col-sm-2 control-label' %>
-  <div class="col-sm-4">
-    <%= f.text_field :last_name, class: 'form-control' %>
+  <div class="form-group">
+    <%= f.label :last_name, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_field :last_name, class: 'form-control' %>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <%= f.label :email, class: 'col-sm-2 control-label' %>
-  <div class="col-sm-4">
-    <%= f.text_field :email, class: 'form-control' %>
+  <div class="form-group">
+    <%= f.label :email, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
   </div>
-</div>
 
-
-<div class="form-group">
-  <div class="col-sm-offset-2 col-sm-10">
-    <%= f.submit "Update User", :class => "btn btn-primary" %>
+  <div class = "form-group">
+    <%= f.label :password, class: "col-sm-2 control-label" %>
+    <div class = "col-sm-4">
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <div class="well well-sm col-sm-offset-2 col-sm-4 control-label text-center">
-    <%= link_to "Delete User", user_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  <div class = "form-group">
+    <%= f.label :password_confirmation, class: "col-sm-2 control-label" %>
+    <div class = "col-sm-4">
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </div>
+
+<br><br><br>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "Update User", class: 'btn btn-primary' %>
+    </div>
   </div>
-</div>
+
+
+  </div>
+
 
 <% end %>
