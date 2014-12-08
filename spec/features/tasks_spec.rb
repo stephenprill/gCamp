@@ -2,17 +2,34 @@ require 'rails_helper'
 
   feature "Tasks" do
 
-    scenario 'User creates, edits, deletes task' do
+    scenario 'User creates, edits and deletes task' do
       project1 = Project.create!(
         name: "Awesome Project"
       )
-      visit project_tasks_path(project1)
+
+      visit root_path
+      click_on "Sign Up"
+      fill_in("First name", {with: "Jameson"})
+      fill_in "Last name", with: "Jones"
+      fill_in "Email", with: "jameson@mail.com"
+      fill_in "Password", with: "pass"
+      fill_in "Password confirmation", with: "pass"
+      click_on "Sign up"
+      visit root_path
+      expect(page).to have_content("Jameson Jones")
+
+      visit root_path
+
+      click_on "Projects"
+      visit projects_path(project1)
+      click_on "Awesome Project"
+      click_on "0 Tasks"
       click_on "New Task"
       fill_in "Description", with: "Organize Notes"
       fill_in "Due date", with: "02/11/2024"
 
       click_on "Create Task"
-      visit project_tasks_path(project1)
+      visit project_task_path(project1)
 
       expect(page).to have_content("Organize Notes")
 

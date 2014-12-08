@@ -3,7 +3,7 @@ require 'rails_helper'
 
   feature "Projects" do
 
-    scenario 'User logs in, creates, edits and deletes a project' do
+    scenario 'User signs up, logs in, creates, edits and deletes a project' do
 
       visit root_path
       click_on "Sign Up"
@@ -17,9 +17,11 @@ require 'rails_helper'
       expect(page).to have_content("Jameson Jones")
 
       visit root_path
-    
+
       click_on "Projects"
       click_on "Create Project"
+      click_on "Create Project"
+      expect(page).to have_content("Name can't be blank")
 
       fill_in "Name", with: "New App"
 
@@ -36,4 +38,7 @@ require 'rails_helper'
       click_on "Delete"
       expect(page).to have_content("New App 2014 was successfully destroyed.")
     end
+
+
+
 end
