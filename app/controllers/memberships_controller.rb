@@ -34,7 +34,6 @@ class MembershipsController < ApplicationController
     redirect_to project_memberships_path(@project), notice: "#{@membership.user.full_name} was updated successfully"
   end
 
-
   def destroy
     @membership = Membership.find(params[:id])
     @membership.destroy
