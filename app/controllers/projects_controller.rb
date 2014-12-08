@@ -13,8 +13,7 @@ class ProjectsController < ApplicationController
       @projects = Project.new
       project_params = params.require(:project).permit(:name)
       @project = Project.new(project_params)
-      if @project.save
-
+    if @project.save
         # if @membership.save
         #   redirect_to project_memberships_path(@project), notice: "#{@membership.user.full_name} was added successfully"
       redirect_to projects_path, notice: "#{@project.name} was successfully created."

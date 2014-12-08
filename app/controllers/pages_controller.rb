@@ -1,6 +1,7 @@
 class PagesController < PublicController
-  def index
 
+
+  def index
     quote1 = Quote.new
     quote1.text = "Hey, guys. Whoa, Big Gulps, huh? All right! Welp, see you later."
     quote1.author = "Lloyd Christmas"
