@@ -7,6 +7,8 @@ require 'rails_helper'
         name: "Awesome Project"
       )
 
+      create_user
+
       visit root_path
       click_on "Sign Up"
       fill_in("First name", {with: "Jameson"})
@@ -29,7 +31,6 @@ require 'rails_helper'
       fill_in "Due date", with: "02/11/2024"
 
       click_on "Create Task"
-      visit project_task_path(project1)
 
       expect(page).to have_content("Organize Notes")
 

@@ -6,6 +6,7 @@ module ObjectCreationMethods
       last_name: 'Khan',
       email: 'chaka@khan.com',
       password: 'pass',
+      password_confirmation: 'pass'
     }
     User.create!(defaults.merge(overides))
   end
