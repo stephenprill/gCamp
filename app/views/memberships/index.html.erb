@@ -3,11 +3,11 @@
     <h3><%= @project.name %>: Manage Members</h3>
   </div>
 
-  <ol class="breadcrumb">
-    <li><%= link_to "Projects", projects_path %></li>
-    <li><%= link_to @project.name, project_path(@project) %> </li>
-    <li class="active">Memberships</li>
-  </ol>
+      <ol class="breadcrumb">
+        <li><%= link_to "Projects", projects_path %></li>
+        <li><%= link_to @project.name, project_path(@project) %> </li>
+        <li class="active">Memberships</li>
+      </ol>
 
       <%= render "shared/errors", instance: @membership %>
 

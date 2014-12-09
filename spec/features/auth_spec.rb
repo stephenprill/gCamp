@@ -12,7 +12,7 @@ require 'rails_helper'
       fill_in "Password confirmation", with: "pass"
 
       click_on "Sign up"
-      visit root_path
+      visit new_project_path
       expect(page).to have_content("Jameson Jones")
 
       click_on "Sign Out"

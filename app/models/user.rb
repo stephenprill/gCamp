@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :memberships, dependent: :destroy
 	has_many :users, through: :memberships
   has_many :comments, dependent: :nullify
+  has_many :projects, through: :memberships
 
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :first_name, presence: true
