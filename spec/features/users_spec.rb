@@ -4,7 +4,7 @@ require 'rails_helper'
   feature "Users" do
 
     scenario 'User creates, edits, deletes user' do
-      visit users_path
+      visit signup_path
 
       fill_in "First name", with: "Chaka"
       fill_in "Last name", with: "Khan"

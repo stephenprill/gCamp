@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
 
   def create
       @projects = Project.new
-      project_params = params.require(:project).permit(:name)
+        project_params = params.require(:project).permit(:name)
       @project = Project.new(project_params)
     if @project.save
         # if @membership.save
