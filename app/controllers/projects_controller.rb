@@ -1,9 +1,14 @@
 class ProjectsController < ApplicationController
 
+  #before_action :set_project,
+
   def index
     @projects = Project.all
-
+    @tracker_projects = TrackerApi.new
+    if current_user.pivotal_tracker_token
+    @tracker_projects.trackerprojects(current_user.pivotal_tracker_token)
   end
+end 
 
   def new
     @project = Project.new
@@ -34,16 +39,16 @@ class ProjectsController < ApplicationController
     project_params = params.require(:project).permit(:name)
     @project = @project = Project.find(params[:id])
     if @project.update(project_params)
-    redirect_to project_path(@project), notice: "#{@project.name} was successfully updated."
-  end
+      redirect_to project_path(@project), notice: "#{@project.name} was successfully updated."
     end
+  end
 
   def destroy
     @project = Project.find(params[:id])
     if @project.destroy
-    redirect_to projects_path(@project), notice: "#{@project.name} was successfully destroyed."
-  end
+      redirect_to projects_path(@project), notice: "#{@project.name} was successfully destroyed."
     end
+  end
 
 
 end

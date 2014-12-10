@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    users_param = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+    users_param = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :pivotal_tracker_token)
     @user = User.new(users_param)
     if @user.save
       redirect_to users_path, notice: "#{@user.full_name} was successfully created"
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    users_param=params.require(:user).permit(:first_name, :last_name, :email)
+    users_param=params.require(:user).permit(:first_name, :last_name, :email, :password, :password_digest, :pivotal_tracker_token)
     @user = User.find(params[:id])
     if @user.update(users_param)
       redirect_to users_path, notice: "#{@user.full_name} was successfully updated"
