@@ -26,4 +26,26 @@
       </tbody>
     </table>
 
+
+  <h3>Pivotal Tracker Projects</h3>
+
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th colspan="1">
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <% @projects.each do |project| %>
+        <td><%= link_to project.name, project_path(id: project.id) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
 </div>
