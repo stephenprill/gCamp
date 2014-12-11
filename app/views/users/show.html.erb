@@ -5,10 +5,8 @@
 </div>
 <dl class="dl-horizontal">
   <dt>
-
     <strong>First name:</strong>
     <dd><%= @user.first_name %></dd>
-
   </dt>
 
   <dt>
@@ -26,15 +24,12 @@
   </dt>
 
   <dt>
-
-    <strong>Pivotal Tracker Token:</strong>
-    <dd>
-      <%= @user.pivotal_tracker_token[0 .. 3]%>
-      <br>
-      <%= '*' * (@user.pivotal_tracker_token.length - 4)%>
-    </dd>
-
-    </dt>
+<strong>Pivotal Tracker Key</strong>
+  <dd>
+    <%= @user.pivotal_tracker_token[0 .. 3] %>
+    <%='*' * (@user.pivotal_tracker_token.length - 4) %>
+  </dd>
+</dt>
 
 
 

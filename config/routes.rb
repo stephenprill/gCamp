@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'terms' => 'pages#terms', as: :terms
   get 'faq' => 'pages#faq', as: :faq
 
+  get 'tracker_projects' => 'tracker_projects#show', as: :tracker_projects
+
   get '/sign-up' => 'registrations#new', as: :signup
   post '/sign-up' => 'registrations#create'
   get '/sign-in' => 'authentication#new', as: :signin
