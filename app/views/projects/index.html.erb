@@ -41,7 +41,7 @@
     <tbody>
       <tr>
         <% @tracker_projects.each do |trackerproject| %>
-        <td><%=link_to trackerproject[:name], tracker_projects_path  %></td>
+        <td><%=link_to(trackerproject[:name], tracker_project_path(trackerproject[:id]))%></td>
       </tr>
       <% end %>
     </tbody>
