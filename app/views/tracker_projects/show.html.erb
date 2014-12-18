@@ -16,14 +16,15 @@
     </thead>
 
     <tbody>
-
+      <% @tracker_stories.each do |story| %>
       <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <!-- /n/projects/1183306/stories/84170122 -->
+        <th><%= link_to story[:name], "https://www.pivotaltracker.com/n/projects/#{params[:id]}/stories/#{story[:id]}" %></th>
+        <th><%= story[:estimate] %></th>
+        <th><%= story[:labels].map{ |label| label[:name]}.join(" ,") %></th>
+        <th><%= story[:current_state] %></th>
       </tr>
-
+<% end %>
 
     </tbody>
   </table>
