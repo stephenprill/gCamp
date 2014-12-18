@@ -10,7 +10,7 @@
     <%= csrf_meta_tags %>
     <%= javascript_include_tag 'application' %>
 
-    <title>gCamp</title>
+    <title><%= content_for(:title) || "gCamp" %></title>
   </head>
 
   <body>
