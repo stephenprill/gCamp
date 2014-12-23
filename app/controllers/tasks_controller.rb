@@ -1,10 +1,12 @@
 class TasksController < ApplicationController
 
+
   before_action do
     @project = Project.find(params[:project_id])
   end
 
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_member
 
 
   def index
@@ -75,6 +77,11 @@ class TasksController < ApplicationController
       params.require(:task).permit(:description, :complete, :due_date, )
     end
 
+    def authorize_member
+      unless current_user_member?
+        render file:'public/404', status: :not_found, layout: false
+      end
+    end
 
 
 
