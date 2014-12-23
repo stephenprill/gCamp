@@ -15,6 +15,7 @@ class MembershipsController < ApplicationController
 
 
   def create
+    # binding.pry
     # p @project.membership.length saved
     @membership = @project.memberships.new(membership_params)
     #@membership = Membership.new(params.require(:membersihp).permit(:user_id, :role))

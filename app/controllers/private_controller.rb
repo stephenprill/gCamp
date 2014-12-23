@@ -10,4 +10,6 @@ class PrivateController < ApplicationController
   #     current_user ? "private" : "public"
   #   end
   
+  # get rid of?
+
 end

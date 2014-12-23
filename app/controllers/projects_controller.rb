@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 
   #before_action :set_project,
+  before_action :authorize_member, only: [:show]
 
   def index
     @projects = Project.all
@@ -24,7 +25,7 @@ class ProjectsController < ApplicationController
       )
         # if @membership.save
         #   redirect_to project_memberships_path(@project), notice: "#{@membership.user.full_name} was added successfully"
-      redirect_to projects_path, notice: "#{@project.name} was successfully created."
+      redirect_to project_tasks_path(@project), notice: "#{@project.name} was successfully created."
     else
       render :new
     end
@@ -52,6 +53,15 @@ class ProjectsController < ApplicationController
       redirect_to projects_path(@project), notice: "#{@project.name} was successfully destroyed."
     end
   end
+
+#
+  def authorize_member
+    @project = Project.find(params[:id])
+    unless current_user_member?
+      render file:'public/404', status: :not_found, layout: false
+    end
+  end
+
 
 
 end

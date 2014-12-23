@@ -1,5 +1,6 @@
 class PagesController < PublicController
 
+  skip_before_action :ensure_current_user
 
   def index
     quote1 = Quote.new

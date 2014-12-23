@@ -15,7 +15,7 @@
 
       <tbody>
           <tr>
-            <% @projects.each do |project| %>
+            <% current_user.projects.each do |project| %>
             <td><%= link_to project.name, project_path(id: project.id) %></td>
             <td><%= link_to (project.memberships.count), project_memberships_path(project_id: project.id) %></td>
             <td><%= link_to (project.tasks.count), project_tasks_path(project_id: project.id) %></td>
@@ -45,4 +45,4 @@
     </tbody>
   </table>
 </div>
-</div>  
+</div>

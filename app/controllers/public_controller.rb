@@ -6,4 +6,6 @@ class PublicController < ApplicationController
   # about
   # faq
   # index
+  
+  # get rid of
 end
