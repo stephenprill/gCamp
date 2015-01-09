@@ -1,36 +1,31 @@
 <div class="page-header">
   <%= link_to "Edit", edit_user_path, :class => "btn btn-info btn pull-right" %>
   <h3><%= @user.full_name %></h3>
-
 </div>
+
 <dl class="dl-horizontal">
-  <dt>
-    <strong>First name:</strong>
-    <dd><%= @user.first_name %></dd>
-  </dt>
+    <dt>
+      <strong>First name:</strong>
+      <dd><%= @user.first_name %></dd>
+    </dt>
 
-  <dt>
+    <dt>
+      <strong>Last name:</strong>
+      <dd><%= @user.last_name %></dd>
+    </dt>
 
-    <strong>Last name:</strong>
-    <dd><%= @user.last_name %></dd>
+    <dt>
+      <strong>Email:</strong>
+      <dd><%= mail_to @user.email %></dd>
+    </dt>
 
-  </dt>
-
-  <dt>
-
-    <strong>Email:</strong>
-    <dd><%= mail_to @user.email %></dd>
-
-  </dt>
-
-  <dt>
-<strong>Pivotal Tracker Key</strong>
-  <dd>
-    <%= @user.pivotal_tracker_token[0 .. 3] %>
-    <%='*' * (@user.pivotal_tracker_token.length - 4) %>
-  </dd>
-</dt>
-
-
-
-  </dl>
+    <dt>
+    <strong>Pivotal Tracker Key</strong>
+      <dd>
+        <% unless @user.pivotal_tracker_token == nil  %>
+        <%= @user.pivotal_tracker_token[0 .. 3] %>
+        <%='*' * (@user.pivotal_tracker_token.length - 4) %>
+      </dd>
+      <% end %>
+    </dt>
+</dl>

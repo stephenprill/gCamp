@@ -22,8 +22,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def owner?
-    @project.memberships.where(role: "owner", user_id: current_user)
+  def owner?(project, user)
+    @project.memberships.where(role: "owner", user_id: current_user).exists?
   end
 
   def redirect_to_previous_url_or_projects
@@ -32,8 +32,18 @@ class ApplicationController < ActionController::Base
     session.delete(:first_url)
   end
 
+  def has_owner?(project)
+    owners = Membership.where(:project_id => project.id, :role => "owner")
+    if owners.count >= 2
+      true
+    else
+      false
+    end
+  end
+
   helper_method :current_user
   helper_method :owner?
   helper_method :current_user_member?
+  helper_method :has_owner?
 
 end
