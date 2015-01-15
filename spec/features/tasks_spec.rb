@@ -2,29 +2,17 @@ require 'rails_helper'
 
   feature "Tasks" do
 
-    scenario 'User creates, edits and deletes task' do
+    scenario 'Owner creates, edits and deletes task' do
       project1 = Project.create!(
         name: "Awesome Project"
       )
+      password = "password"
+      user = create_user(:password => password)
+      create_membership(user, project1, 'owner')
+      log_in(user, password)
+      expect(page).to have_content(user.full_name)
 
-      create_user
-
-      visit root_path
-      click_on "Sign Up"
-      fill_in("First name", {with: "Jameson"})
-      fill_in "Last name", with: "Jones"
-      fill_in "Email", with: "jameson@mail.com"
-      fill_in "Password", with: "pass"
-      fill_in "Password confirmation", with: "pass"
-      click_on "Sign up"
-      visit root_path
-      expect(page).to have_content("Jameson Jones")
-
-      visit root_path
-
-      click_on "Projects"
-      visit projects_path(project1)
-      click_on "Awesome Project"
+      visit project_path(project1)
       click_on "0 Tasks"
       click_on "New Task"
       fill_in "Description", with: "Organize Notes"
@@ -44,11 +32,7 @@ require 'rails_helper'
       expect(page).to have_content("Task was successfully updated.")
 
       expect(page).to have_content("Organize Notes & Files")
-
-      click_on "Edit"
-
-      click_on "Back"
-
+      visit project_tasks_path(project1)
       find(".glyphicon-remove").click
 
       expect(page).to have_content("Task was successfully deleted")

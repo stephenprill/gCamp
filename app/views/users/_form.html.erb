@@ -50,7 +50,7 @@
 <br>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <% if current_user %>
+      <% if @user.id %>
         <%= f.submit "Update User", class: 'btn btn-primary' %>
       <% else %>
         <%= f.submit "Create User", class: 'btn btn-primary' %>
