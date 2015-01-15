@@ -21,11 +21,11 @@
 
     <dt>
     <strong>Pivotal Tracker Key</strong>
-      <dd>
-        <% unless @user.pivotal_tracker_token == nil  %>
+      <% if @user.pivotal_tracker_token && @user.pivotal_tracker_token != "" %>
+        <dd>
         <%= @user.pivotal_tracker_token[0 .. 3] %>
-        <%='*' * (@user.pivotal_tracker_token.length - 4) %>
-      </dd>
+        <%= '*' * (@user.pivotal_tracker_token.length - 4) %>
+        </dd>
       <% end %>
     </dt>
 </dl>
