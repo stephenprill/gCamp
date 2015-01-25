@@ -57,7 +57,7 @@ class ProjectsController < ApplicationController
 #
   def authorize_member
     @project = Project.find(params[:id])
-    unless current_user_member?
+    unless current_user.admin || current_user_member?
       render file:'public/404', status: :not_found, layout: false
     end
   end

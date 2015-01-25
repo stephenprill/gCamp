@@ -78,7 +78,7 @@ class TasksController < ApplicationController
     end
 
     def authorize_member
-      unless current_user_member?
+      unless current_user.admin || current_user_member?
         render file:'public/404', status: :not_found, layout: false
       end
     end

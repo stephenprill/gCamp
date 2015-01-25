@@ -38,17 +38,29 @@ class MembershipsController < ApplicationController
 
 
   def update
-    # ensure_project_owner
-    @membership = Membership.find(params[:id])
-    @membership.update(membership_params)
-    redirect_to project_memberships_path(@project), notice: "#{@membership.user.full_name} was updated successfully"
+  #   owners = 0
+  #   @project.memberships.each do |membership|
+  #     if membership.role == "owner"
+  #       owners += 1
+  #   end
+  # end
+  #
+  #   if owners > 1
+  #   # ensure_project_owner
+      @membership = Membership.find(params[:id])
+      @membership.update(membership_params)
+      redirect_to project_memberships_path, notice: "#{@membership.user.full_name} was updated successfully"
+    # else
+    #   render :index
+    # end
   end
+
 
   def destroy
     # ensure_project_owner
     @membership = Membership.find(params[:id])
     if @project.memberships.count != 1 || has_owner?(@project)
-    @membership.destroy
+      @membership.destroy
     redirect_to project_memberships_path(@project), notice: "#{@membership.user.full_name} was removed successfully"
     else
     render :index
@@ -73,7 +85,7 @@ end
   end
 
   def ensure_project_owner
-    redirect_to root_path unless @project_owner
+    redirect_to root_path unless current_user.admin || @project_owner
   end
 
 end

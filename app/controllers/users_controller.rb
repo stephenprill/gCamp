@@ -1,7 +1,20 @@
 class UsersController < ApplicationController
 
+  before_action :only => [:edit] do
+    @user = User.find(params[:id])
+    if current_user.admin || @user == current_user
+    else
+      raise AccessDenied
+    end
+  end
+
   def index
-    @users = User.all
+    #if   #.admin
+    @users = []
+    current_user.projects.each do |project|
+      @users += project.users
+    end
+      @users = @users.uniq
   end
 
   def new
@@ -17,7 +30,6 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
 
   def edit
     @user = User.find(params[:id])
@@ -37,14 +49,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
   def destroy
     @user = User.find(params[:id])
     if @user.destroy
       redirect_to users_path, notice: "#{@user.full_name} was successfully deleted"
     end
   end
-
-
 
 end
