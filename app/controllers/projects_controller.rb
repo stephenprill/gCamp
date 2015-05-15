@@ -54,7 +54,8 @@ class ProjectsController < ApplicationController
     end
   end
 
-#
+  private
+
   def authorize_member
     @project = Project.find(params[:id])
     unless current_user.admin || current_user_member?
